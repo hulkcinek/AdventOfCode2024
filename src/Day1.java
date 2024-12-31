@@ -34,7 +34,7 @@ public class Day1 {
     private void read() {
         Scanner s = null;
         try {
-            s = new Scanner(new File("C:\\Users\\Marcin\\IdeaProjects\\AdventOfCode2024\\src\\day1.txt"));
+            s = new Scanner(new File("src/inputs/day1.txt"));
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }

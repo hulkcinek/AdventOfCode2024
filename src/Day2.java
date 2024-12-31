@@ -72,7 +72,7 @@ public class Day2 {
     private void read() {
         Scanner s = null;
         try {
-            s = new Scanner(new File("C:\\Users\\Marcin\\IdeaProjects\\AdventOfCode2024\\src\\inputs\\day2.txt"));
+            s = new Scanner(new File("src/inputs/day2.txt"));
 //            s = new Scanner("7 6 4 2 1\n" +
 //                    "1 2 7 8 9\n" +
 //                    "9 7 6 2 1\n" +
