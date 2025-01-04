@@ -7,7 +7,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Day2 {
+
     List<List<Integer>> reports = new ArrayList<>();
+
     public void start(){
         read();
         findSafeReports();
@@ -73,12 +75,6 @@ public class Day2 {
         Scanner s = null;
         try {
             s = new Scanner(new File("src/inputs/day2.txt"));
-//            s = new Scanner("7 6 4 2 1\n" +
-//                    "1 2 7 8 9\n" +
-//                    "9 7 6 2 1\n" +
-//                    "1 3 2 4 5\n" +
-//                    "8 6 4 4 1\n" +
-//                    "1 3 6 7 9");
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
