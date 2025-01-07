@@ -14,6 +14,6 @@ public class Main {
         Day9 day9 = new Day9();
         Day10 day10 = new Day10();
 
-        day6.start();
+        day7.start();
     }
 }
