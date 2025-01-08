@@ -14,7 +14,7 @@ public class Day7 {
     }
 
     private void findPossibleEquations() {
-        double total = 0;
+        long total = 0;
         for (Equation equation : equations){
             if(isPossible(equation))
                 total += equation.expectedValue;
@@ -26,13 +26,15 @@ public class Day7 {
         return evaluate(equation, equation.numbers.getFirst(), 1);
     }
 
-    private boolean evaluate(Equation equation, double currentValue, int index) {
+    private boolean evaluate(Equation equation, long currentValue, int index) {
         if (index == equation.numbers.size()){
             return currentValue == equation.expectedValue;
         }
 
+
         return evaluate(equation, currentValue + equation.numbers.get(index), index+1) ||
-                evaluate(equation, currentValue * equation.numbers.get(index), index+1);
+                evaluate(equation, currentValue * equation.numbers.get(index), index+1) ||
+                evaluate(equation, Long.parseLong("" + currentValue + equation.numbers.get(index)), index+1);
 
     }
 
@@ -48,12 +50,24 @@ public class Day7 {
             String line = s.nextLine();
             String[] parts = line.split("(: )|( )");
 
-            List<Double> numbers = new ArrayList<>();
+            List<Long> numbers = new ArrayList<>();
             for (int i = 1; i < parts.length; i++) {
-                numbers.add(Double.parseDouble(parts[i]));
+                numbers.add(Long.parseLong(parts[i]));
             }
 
-            equations.add(new Equation(Double.parseDouble(parts[0]), numbers));
+            equations.add(new Equation(Long.parseLong(parts[0]), numbers));
         }
     }
+}
+
+class Equation {
+
+    long expectedValue;
+    List<Long> numbers;
+
+    public Equation(long expectedValue, List<Long> numbers) {
+        this.expectedValue = expectedValue;
+        this.numbers = numbers;
+    }
+
 }
