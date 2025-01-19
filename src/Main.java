@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,6 +15,6 @@ public class Main {
         Day9 day9 = new Day9();
         Day10 day10 = new Day10();
 
-        day8.start();
+        day10.start();
     }
 }
