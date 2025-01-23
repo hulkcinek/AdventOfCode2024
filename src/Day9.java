@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -53,10 +54,18 @@ public class Day9 {
     }
 
     private boolean isFullyCompacted() {
+
+        // bardziej funkcyjnie:
+        /*int firstEmpty = files.indexOf(-1);
+        List<Integer> fileEnd = files.subList(firstEmpty, files.size());
+        boolean wasPresent = fileEnd.removeIf(i -> i != -1);*/
+
         boolean foundEmpty = false;
         for (Integer file : files){
-            if (foundEmpty && file != -1) return false;
-            if (file == -1) foundEmpty = true;
+            if (foundEmpty && file != -1)
+                return false;
+            if (file == -1)
+                foundEmpty = true;
         }
         return true;
     }
