@@ -48,6 +48,8 @@ public class Day12 {
         }
     }
 }
+
+
 class Garden {
 
     char type;
