@@ -17,10 +17,9 @@ public class Day14 {
     public void start() {
         read();
         letTimePass();
-//        getSecurityScore();
     }
 
-    private void getSecurityScore() {
+    private long getSecurityScore() {
         long securityScore = 1;
         for (Robot.Quadrant q : Robot.Quadrant.values()){
             if (q.equals(Robot.Quadrant.MIDDLE)) continue;
@@ -31,14 +30,16 @@ public class Day14 {
                     .filter(a -> a.equals(q))
                     .count();
         }
-        System.out.println(securityScore);
+        return securityScore;
     }
 
     private void letTimePass() {
-        for (int i = 0; i < 200; i++) {
+        for (int i = 0; i < 1000; i++) {
             robots.forEach(Robot::move);
             frame++;
-            print();
+
+//            if(getSecurityScore() > 200000000)
+                print();
         }
         writer.close();
     }
