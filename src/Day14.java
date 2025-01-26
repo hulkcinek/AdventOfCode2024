@@ -34,7 +34,7 @@ public class Day14 {
     }
 
     private void letTimePass() {
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 500; i++) {
             robots.forEach(Robot::move);
             frame++;
 
